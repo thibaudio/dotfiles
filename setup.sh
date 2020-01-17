@@ -21,7 +21,7 @@ function config_spacemacs() {
         echo "WARNING: Folder ${HOME}/.spacemacs.d already exist - Skipping"
     else
         rm -rf ${HOME}/.spacemacs.d
-	link_folder $SCRIPTPATH/.spacemacs.d ${HOME}/.spacemacs.d
+        link_folder $SCRIPTPATH/.spacemacs.d ${HOME}/.spacemacs.d
     fi
 }
 

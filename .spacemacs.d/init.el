@@ -472,7 +472,25 @@ before packages are loaded."
   (evil-ex-define-cmd "q" 'kill-this-buffer)
   ;; Need to type out :quit to close emacs
   (evil-ex-define-cmd "quit" 'evil-quit)
+
+  ;; ORG-MODE
+  ;; org-agenda files
+  (setq org-agenda-files
+        '(
+          "~/Nextcloud/0-Inbox",
+          "~/Nextcloud/1-Projects",
+          "~/Nextcloud/2-Areas",
+          "~/Nextcloud/3-References"
+          ))
+  (setq org-archive-location (concat "~/Nextcloud/4-Archives/" (format-time-string "%Y" (current-time)) "/" (format-time-string "%m" (current-time)) ".org_archive::"))
+  ;; Configure custom capture templates
+  (setq org-capture-templates
+        `(
+          ("t" "To-do" entry (file+headline "~/Nextcloud/0-Inbox/task.org" "Tasks")
+           "** TODO %^{Task Description}\nCreated From: %a\n" :clock-in t :clock-resume t :prepend t)
+          ))
   )
+
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
