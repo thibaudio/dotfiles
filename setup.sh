@@ -25,6 +25,17 @@ function config_spacemacs() {
     fi
 }
 
+# .config - Linux only
+function link_dotconfig() {
+	  if [ -z $WIN ]; then
+        for d in ${SCRIPTPATH}/.config/*; do
+            target="${HOME}/.config/"$(basename "$d")
+            rm -rf "${target}"
+            ln -sf "${d}" "${target}"
+        done
+    fi
+}
+
 if [ -z ${HOME} ] ;then
 	  echo "ERROR: now \${HOME} env. variable found"
 	  exit 1
@@ -34,3 +45,4 @@ fi
 [[ $(uname -a | grep -o MINGW) == MINGW ]] && WIN=true
 
 config_spacemacs
+link_dotconfig
