@@ -1,4 +1,6 @@
 # dotfiles
 
-Setup with ./setup.sh
-On windows, run in Administrator mode
+## Doom emacs config
+### Required system packages
+[Delta](https://github.com/dandavison/delta)
+[sqlite3](https://www.sqlite.org/download.html)

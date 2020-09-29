@@ -51,3 +51,4 @@
 
 (package! terraform-mode)
 (package! magit-delta :recipe (:host github :repo "dandavison/magit-delta") :pin "d988abd")
+(package! deft)

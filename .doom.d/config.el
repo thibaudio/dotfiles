@@ -91,3 +91,23 @@
                            "~/Nextcloud/org/tickler.org")))
 (after! magit
   (magit-delta-mode +1))
+
+(after! org-roam
+  (setq org-roam-directory "~/Nextcloud/org/notes")
+  (setq org-roam-ref-capture-templates
+        '(("r" "ref" plain (function org-roam--capture-get-point)
+           "%?"
+           :file-name "websites/${slug}"
+           :head "#+SETUPFILE:./hugo_setup.org
+#+ROAM_KEY: ${ref}
+#+HUGO_SLUG: ${slug}
+#+TITLE: ${title}
+
+- source :: ${ref}"
+           :unnarrowed t))))
+
+(after! deft
+  (setq deft-directory "~/Nextcloud/org/notes"))
+
+(after! lsp-java
+  (setq lsp-java-java-path "/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home/bin/java"))
