@@ -86,11 +86,11 @@
 
 ;; Set org agenda files
 (after! org
-  (setq org-agenda-files '("~/Nextcloud/org/todo.org"
-                           "~/Nextcloud/org/projects.org"
-                           "~/Nextcloud/org/tickler.org"))
   (setq org-capture-templates
-        '(("w" "weekly" entry (file "/Users/tbaas/Nextcloud/org/weekly.org")
+        '(("n" "Quick Note" entry (file+headline "~/Nextcloud/org/inbox.org" "Notes")
+           "* %U: %?")
+
+          ("w" "weekly" entry (file "~/Nextcloud/org/weekly.org")
            "* Weekly review %<%Y%m%d>
 ** Clean
 *** [ ] Desk
@@ -108,41 +108,30 @@
 ****
 *** What should be improved?
 ****
-"
-         :file-name "weekly"
-         :head "#+title: Weekly reviews"
-         :unnarrowed t))
+")
+          ("r" "org-capture-protocol" entry (file+headline "~/Nextcloud/org/inbox.org" "Links")
+           "* %:annotation\nCaptured on %U\nurl:: %:link\n%i"
+           ))
         )
   (map! :leader
         (:prefix ("a" . "agenda")
-         :desc "New weekly review" "w" (lambda () (interactive) (org-capture nil "w")))))
+         :desc "New weekly review" "w" (lambda () (interactive) (org-capture nil "w")))
+        :prefix "n"
+        :desc "New quick note" "n" (lambda () (interactive) (org-capture nil "n"))
+        :desc "Search note" "s" (lambda () (interactive) (counsel-rg "" "~/Nextcloud/org"))
+        :desc "Open inbox" "i" (lambda () (interactive) (find-file "~/Nextcloud/org/inbox.org"))))
 
 (after! magit
   (magit-delta-mode +1))
 
 (after! org-roam
   (setq org-roam-directory "~/Nextcloud/org/notes")
-  (setq org-roam-capture-ref-templates
-        '(("r" "ref" plain (function org-roam--capture-get-point)
-           "%?"
-           :file-name "websites/${slug}"
-           :head "#+ROAM_KEY: ${ref}
-#+TITLE: ${title}
-#+roam_tags: Resonance Website
-
-- source :: ${ref}"
-
-           :unnarrowed t)))
   (map! :leader
         :prefix "n"
-        :desc "New fleeting note" "j" #'org-roam-dailies-capture-today
-        :desc "Today's fleeting notes" "t" #'org-roam-dailies-find-today
         :desc "Find note file" "f" #'org-roam-find-file
-        :desc "New note" "n" #'org-roam-capture
-        :desc "Insert note link" "i" #'org-roam-insert
-        :desc "Search note" "s" (lambda () (interactive) (counsel-rg "" org-roam-directory) )))
-
-(after! org)
+        :desc "New roam note" "N" #'org-roam-capture
+        :desc "Insert note link" "l" #'org-roam-insert
+        ))
 
 (after! lsp-java
   (setq lsp-java-java-path "/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home/bin/java"))
