@@ -137,9 +137,10 @@
         :prefix "n"
         :desc "New fleeting note" "j" #'org-roam-dailies-capture-today
         :desc "Today's fleeting notes" "t" #'org-roam-dailies-find-today
-        :desc "Find note" "f" #'org-roam-find-file
+        :desc "Find note file" "f" #'org-roam-find-file
         :desc "New note" "n" #'org-roam-capture
-        :desc "Insert note link" "i" #'org-roam-insert))
+        :desc "Insert note link" "i" #'org-roam-insert
+        :desc "Search note" "s" (lambda () (interactive) (counsel-rg "" org-roam-directory) )))
 
 (after! org)
 
