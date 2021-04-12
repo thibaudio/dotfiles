@@ -88,24 +88,60 @@
 (after! org
   (setq org-agenda-files '("~/Nextcloud/org/todo.org"
                            "~/Nextcloud/org/projects.org"
-                           "~/Nextcloud/org/tickler.org")))
+                           "~/Nextcloud/org/tickler.org"))
+  (setq org-capture-templates
+        '(("w" "weekly" entry (file "/Users/tbaas/Nextcloud/org/weekly.org")
+           "* Weekly review %<%Y%m%d>
+** Clean
+*** [ ] Desk
+*** [ ] Inboxes
+** Review
+*** [ ] Next action list
+*** [ ] Project list - todoist
+*** [ ] Current project - org
+*** [ ] Calendar
+*** [ ] Waiting for
+** Reflect
+*** Warmup
+**** [ ] Read last review
+*** What went well this week?
+****
+*** What should be improved?
+****
+"
+         :file-name "weekly"
+         :head "#+title: Weekly reviews"
+         :unnarrowed t))
+        )
+  (map! :leader
+        (:prefix ("a" . "agenda")
+         :desc "New weekly review" "w" (lambda () (interactive) (org-capture nil "w")))))
+
 (after! magit
   (magit-delta-mode +1))
 
 (after! org-roam
   (setq org-roam-directory "~/Nextcloud/org/notes")
-  (setq org-roam-ref-capture-templates
+  (setq org-roam-capture-ref-templates
         '(("r" "ref" plain (function org-roam--capture-get-point)
            "%?"
            :file-name "websites/${slug}"
-           :head "#+SETUPFILE:./hugo_setup.org
-#+ROAM_KEY: ${ref}
-#+HUGO_SLUG: ${slug}
+           :head "#+ROAM_KEY: ${ref}
 #+TITLE: ${title}
+#+roam_tags: Resonance Website
 
 - source :: ${ref}"
-           :unnarrowed t))))
 
+           :unnarrowed t)))
+  (map! :leader
+        :prefix "n"
+        :desc "New fleeting note" "j" #'org-roam-dailies-capture-today
+        :desc "Today's fleeting notes" "t" #'org-roam-dailies-find-today
+        :desc "Find note" "f" #'org-roam-find-file
+        :desc "New note" "n" #'org-roam-capture
+        :desc "Insert note link" "i" #'org-roam-insert))
+
+(after! org)
 
 (after! lsp-java
   (setq lsp-java-java-path "/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home/bin/java"))
