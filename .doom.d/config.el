@@ -106,9 +106,6 @@
 - source :: ${ref}"
            :unnarrowed t))))
 
-(after! deft
-  (setq deft-directory "~/Nextcloud/org/notes")
-  (deft-recursive t))
 
 (after! lsp-java
   (setq lsp-java-java-path "/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home/bin/java"))
