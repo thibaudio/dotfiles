@@ -89,33 +89,13 @@
   (setq org-capture-templates
         '(("n" "Quick Note" entry (file+headline "~/Nextcloud/org/inbox.org" "Notes")
            "* %U: %?")
-
-          ("w" "weekly" entry (file "~/Nextcloud/org/weekly.org")
-           "* Weekly review %<%Y%m%d>
-** Clean
-*** [ ] Desk
-*** [ ] Inboxes
-** Review
-*** [ ] Next action list
-*** [ ] Project list - todoist
-*** [ ] Current project - org
-*** [ ] Calendar
-*** [ ] Waiting for
-** Reflect
-*** Warmup
-**** [ ] Read last review
-*** What went well this week?
-****
-*** What should be improved?
-****
-")
           ("r" "org-capture-protocol" entry (file+headline "~/Nextcloud/org/inbox.org" "Links")
            "* %:annotation\nCaptured on %U\nurl:: %:link\n%i"
            ))
         )
   (map! :leader
         (:prefix ("a" . "agenda")
-         :desc "New weekly review" "w" (lambda () (interactive) (org-capture nil "w")))
+         :desc "New weekly review" "w" (lambda () (interactive) (find-file "~/Nextcloud/org/weekly.org")))
         :prefix "n"
         :desc "New quick note" "n" (lambda () (interactive) (org-capture nil "n"))
         :desc "Search note" "s" (lambda () (interactive) (counsel-rg "" "~/Nextcloud/org"))
