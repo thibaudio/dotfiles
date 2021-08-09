@@ -1,20 +1,20 @@
 # key: week
 # name: Weekly review
 # --
-* Weekly review `(format-time-string "%Y%m%d")`$0
-** Clean
-*** [ ] Desk
-*** [ ] Inboxes
-** Review
-*** [ ] Next action list
-*** [ ] Project list - todoist
-*** [ ] Current project - org
-*** [ ] Calendar
-*** [ ] Waiting for
-** Reflect
-*** Warmup
-**** [ ] Read last review
-*** What went well this week?
-****
-*** What should be improved?
-****
+** Weekly review `(format-time-string "%Y%m%d")`$0
+*** Clean
+**** [ ] Desk
+**** [ ] Inboxes
+*** Review
+**** [ ] Next action list
+**** [ ] Project list - todoist
+**** [ ] Current project - org
+**** [ ] Calendar
+**** [ ] Waiting for
+*** Reflect
+**** Warmup
+***** [ ] Read last review
+**** What went well this week?
+*****
+**** What should be improved?
+*****
