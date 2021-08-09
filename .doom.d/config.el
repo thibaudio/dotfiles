@@ -117,6 +117,12 @@
   (setq lsp-java-java-path "/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home/bin/java"))
 
 (setq lsp-rust-server 'rust-analyzer)
+(setq lsp-auto-guess-root 'false)
 
 (after! magit
   (setq magit-git-executable "/usr/bin/git"))
+
+(after! unity
+  (setq unity-var-directory (expand-file-name "~/emacs-unity/"))
+  (unity-build-code-shim)
+  (unity-setup))
