@@ -84,34 +84,8 @@
 
 ;; Packages configuration
 
-;; Set org agenda files
-(after! org
-  (setq org-capture-templates
-        '(("n" "Quick Note" entry (file+headline "~/Nextcloud/org/inbox.org" "Notes")
-           "* %U: %?")
-          ("r" "org-capture-protocol" entry (file+headline "~/Nextcloud/org/inbox.org" "Links")
-           "* %:annotation\nCaptured on %U\nurl:: %:link\n%i"
-           ))
-        )
-  (map! :leader
-        (:prefix ("a" . "agenda")
-         :desc "New weekly review" "w" (lambda () (interactive) (find-file "~/Nextcloud/org/weekly.org")))
-        :prefix "n"
-        :desc "New quick note" "n" (lambda () (interactive) (org-capture nil "n"))
-        :desc "Search note" "s" (lambda () (interactive) (counsel-rg "" "~/Nextcloud/org"))
-        :desc "Open inbox" "i" (lambda () (interactive) (find-file "~/Nextcloud/org/inbox.org"))))
-
-(after! magit
-  (magit-delta-mode +1))
-
-(after! org-roam
-  (setq org-roam-directory "~/Nextcloud/org/notes")
-  (map! :leader
-        :prefix "n"
-        :desc "Find note file" "f" #'org-roam-find-file
-        :desc "New roam note" "N" #'org-roam-capture
-        :desc "Insert note link" "l" #'org-roam-insert
-        ))
+;; Set org config
+(load! "my-org-config.el")
 
 (after! lsp-java
   (setq lsp-java-java-path "/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home/bin/java"))
@@ -120,7 +94,7 @@
 (setq lsp-auto-guess-root 'false)
 
 (after! magit
-  (setq magit-git-executable "/usr/bin/git"))
+  (magit-delta-mode +1))
 
 (after! unity
   (setq unity-var-directory (expand-file-name "~/emacs-unity/"))
