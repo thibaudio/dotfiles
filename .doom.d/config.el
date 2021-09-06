@@ -100,3 +100,5 @@
   (setq unity-var-directory (expand-file-name "~/emacs-unity/"))
   (unity-build-code-shim)
   (unity-setup))
+
+(setenv "WORKON_HOME" "~/.pyenv/versions")

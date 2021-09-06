@@ -69,6 +69,8 @@ Refer to `org-agenda-prefix-format' for more information."
         :desc "Find note file" "f" #'org-roam-find-file
         :desc "New roam note" "N" #'org-roam-capture
         :desc "Insert note link" "l" #'org-roam-insert
+        :desc "Open today's notes" "t" #'org-roam-dailies-find-today
+        :desc "Open yesterday's notes" "y" #'org-roam-dailies-find-yesterday
         ))
 
 
