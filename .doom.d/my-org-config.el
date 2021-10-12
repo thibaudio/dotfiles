@@ -1,6 +1,6 @@
 ;;; ../dotfiles/.doom.d/org.el -*- lexical-binding: t; -*-
 
-; org-mode related configuration and functions
+                                        ; org-mode related configuration and functions
 
 
 ;; Functions
@@ -47,13 +47,16 @@ Refer to `org-agenda-prefix-format' for more information."
            "* %U: %?")
           ("r" "org-capture-protocol" entry (file+headline "~/Nextcloud/org/inbox.org" "Links")
            "* %:annotation\nCaptured on %U\nurl:: %:link\n%i"
+           )
+          ("t" "Todo" entry (file+headline "~/Nextcloud/org/inbox.org" "Todo")
+           "* TODO %?\n  %i\n  %a"
            ))
         )
   (setq org-agenda-prefix-format
-      '((agenda . " %i %-12(vulpea-agenda-category)%?-12t% s")
-        (todo . " %i %-12(vulpea-agenda-category) ")
-        (tags . " %i %-12(vulpea-agenda-category) ")
-        (search . " %i %-12(vaulpea-agenda-category) ")))
+        '((agenda . " %i %-12(vulpea-agenda-category)%?-12t% s")
+          (todo . " %i %-12(vulpea-agenda-category) ")
+          (tags . " %i %-12(vulpea-agenda-category) ")
+          (search . " %i %-12(vaulpea-agenda-category) ")))
   (map! :leader
         (:prefix ("a" . "agenda")
          :desc "New weekly review" "w" (lambda () (interactive) (find-file "~/Nextcloud/org/weekly.org")))
@@ -66,12 +69,22 @@ Refer to `org-agenda-prefix-format' for more information."
   (setq org-roam-directory "~/Nextcloud/org")
   (map! :leader
         :prefix "n"
-        :desc "Find note file" "f" #'org-roam-find-file
+        :desc "Find note file" "f" #'org-roam-node-find
         :desc "New roam note" "N" #'org-roam-capture
-        :desc "Insert note link" "l" #'org-roam-insert
-        :desc "Open today's notes" "t" #'org-roam-dailies-find-today
-        :desc "Open yesterday's notes" "y" #'org-roam-dailies-find-yesterday
-        ))
+        :desc "Insert note link" "l" #'org-roam-node-insert
+        )
+  (setq org-roam-capture-templates
+        '(("d" "default" plain "%?"
+           :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org"
+                              "#+title: ${title}\n")
+           :unnarrowed t)
+          ("m" "meeting" plain "%?"
+           :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org"
+                              "#+title: ${title}\n#+filetags: :Meeting:\n\n* Attendees:\n** \n\n* Context\n\n* Actions")
+           :unnarrowed t)
+          ))
+  )
 
-
+(with-eval-after-load 'org
+  (add-to-list 'org-modules 'org-habit t))
 (provide 'my-org-config)
