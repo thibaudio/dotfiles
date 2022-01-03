@@ -1,35 +1,7 @@
 # key: week
-# name: Weekly review
+# name: Week
 # --
-** Weekly review `(format-time-string "%Y%m%d")`$0
-*** Clean
-**** [ ] Desk
-**** [ ] Inboxes
-*** Review
-**** [ ] Next action list
-**** [ ] Project list - todoist
-**** [ ] Current project - org
-**** [ ] Calendar
-**** [ ] Waiting for
-*** Reflect
-**** Warmup
-***** [ ] Read last review
-**** What went well this week?
-*****
-**** What should be improved?
-*****
+** Week `(format-time-string "%Y%m%d")`$0
 *** Plan
-Make sure that each week, we fill the buckets.
-- Sharpen
-- Create
-- Invest
-- Learn
-**** What is the main intention for the week?
-**** What are the main personal tasks for the week?
-*****
-*****
-*****
-**** What are the main professional tasks for the week?
-*****
-*****
-*****
+*** Review
+*** Reflect

@@ -96,9 +96,12 @@
 (after! magit
   (magit-delta-mode +1))
 
-(after! unity
-  (setq unity-var-directory (expand-file-name "~/emacs-unity/"))
-  (unity-build-code-shim)
-  (unity-setup))
-
 (setenv "WORKON_HOME" "~/.pyenv/versions")
+
+(after! company
+  (add-to-list 'company-backends #'company-tabnine)
+  ;; Trigger completion immediately.
+  (setq company-idle-delay 0)
+
+  ;; Number the candidates (use M-1, M-2 etc to select completions).
+  (setq company-show-numbers t))
