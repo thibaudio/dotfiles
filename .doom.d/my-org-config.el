@@ -4,7 +4,7 @@
 
 ;; org Configuration
 (after! org
-  (setq org-agenda-files '("~/Nextcloud/org/gtd/inbox.org" "~/Nextcloud/org/gtd/project.org" "~/Nextcloud/org/gtd/weekly.org"))
+  (setq org-agenda-files '("~/Nextcloud/org/gtd/inbox.org" "~/Nextcloud/org/gtd/projects.org" "~/Nextcloud/org/gtd/weekly.org"))
   (setq org-capture-templates
         '(("n" "Quick Note" entry (file+headline "~/Nextcloud/org/gtd/inbox.org" "Notes")
            "* %U: %?")
