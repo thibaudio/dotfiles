@@ -1,8 +1,0 @@
-# key: week
-# name: Week
-# --
-** Week `(format-time-string "%Y%m%d")`$0
-*** [ ] Clean Inbox
-*** [ ] Clean Desk
-*** [ ] Reflect on past week
-*** [ ] Plan next week
