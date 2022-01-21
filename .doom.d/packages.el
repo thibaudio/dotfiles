@@ -50,4 +50,3 @@
 ;(unpin! t)
 
 (package! magit-delta :recipe (:host github :repo "dandavison/magit-delta") :pin "d988abd")
-(package! company-tabnine)
