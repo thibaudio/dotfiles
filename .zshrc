@@ -13,9 +13,11 @@ compinit
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-export EDITOR=nvim
+#export EDITOR=nvim
+export EDITOR="CC=/usr/local/bin/gcc-11 nvim"
 alias nvim="CC=/usr/local/bin/gcc-11 nvim"
 alias vi=nvim
+alias vim=nvim
 alias td="nvim ~/Nextcloud/todo.md"
 
 # kubectl completion
@@ -46,12 +48,23 @@ function tssh () {
 }
 compdefas ssh tssh
 
-function fn() {
+function sf() {
   rg "$@" ~/Nextcloud/org
 }
 
+function ff() {
+  if [ -z "$@" ]; then
+      output=$(cd "$HOME/Nextcloud/org" && fzf --print-query)
+  else
+      output=$(cd "$HOME/Nextcloud/org" && fzf -q "$@" --print-query)
+  fi
+  { read query ; read file } <<< "$output"
+  file="$HOME/Nextcloud/org/$file"
+  [ -f "$file" ] && nvim "$file" || nvim "${query}-$(date +%d.%m.%y-%H:%M:%S).md"
+}
+
 function i() {
-  echo "$@" >> ~/Nextcloud/todo.md
+  echo "- [ ] $@" >> ~/Nextcloud/todo.md
 }
 
 # Python Dev
