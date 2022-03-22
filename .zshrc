@@ -13,11 +13,10 @@ compinit
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-#export EDITOR=nvim
-export EDITOR="CC=/usr/local/bin/gcc-11 nvim"
+export EDITOR=nvim
 alias nvim="CC=/usr/local/bin/gcc-11 nvim"
-alias vi=nvim
-alias vim=nvim
+alias vim="CC=/usr/local/bin/gcc-11 nvim"
+alias vi="CC=/usr/local/bin/gcc-11 nvim"
 alias td="nvim ~/Nextcloud/todo.md"
 
 # kubectl completion
@@ -44,7 +43,7 @@ function tssh () {
     return 1
   fi
 
-  ssh "$@" -t 'tmux attach || tmux'
+  ssh "$@" -t 'tmux attach -t tbs || tmux new -s tbs'
 }
 compdefas ssh tssh
 

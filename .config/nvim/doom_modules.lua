@@ -42,7 +42,7 @@ M.modules = {
     "formatter",          -- File formatting
     "gitsigns",           -- Git signs
     "kommentary",         -- Comments plugin
-    -- "linter",          -- Asynchronous linter, see errors in your code on the fly
+    "linter",          -- Asynchronous linter, see errors in your code on the fly
     "lsp",                -- Language Server Protocols
     -- "minimap",         -- Code minimap, requires github.com/wfxr/code-minimap
     -- "ranger",          -- Ranger File Browser, requires ranger file browser
@@ -83,7 +83,7 @@ M.modules = {
   },
   utilities = {
     -- "lazygit",         -- LazyGit integration for Neovim, requires LazyGit
-    -- "neogit",          -- Magit for Neovim
+    "neogit",          -- Magit for Neovim
     "range-highlight",    -- Hightlights ranges you have entered in commandline
     -- "suda",            -- Write and read files without sudo permissions
     -- "superman",        -- Read Unix man pages faster than a speeding bullet!
