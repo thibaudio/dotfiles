@@ -17,7 +17,6 @@ export EDITOR=nvim
 alias nvim="CC=/usr/local/bin/gcc-11 nvim"
 alias vim="CC=/usr/local/bin/gcc-11 nvim"
 alias vi="CC=/usr/local/bin/gcc-11 nvim"
-alias td="nvim ~/Nextcloud/todo.md"
 
 # kubectl completion
 source <(kubectl completion zsh)
