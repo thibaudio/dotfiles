@@ -1,3 +1,5 @@
-require "options"
-require "plugins"
+require "user.options"
+require "user.plugins"
+require "user.telekasten"
+require "user.cmp"
 require "langs"

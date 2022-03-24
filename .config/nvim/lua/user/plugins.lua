@@ -59,19 +59,13 @@ return packer.startup(function(use)
    }
 
   -- cmp
-  use {
-    "hrsh7th/nvim-cmp",
-    event = "InsertEnter *", -- for lazyload
-    config = require('config.cmp').config(),
-    requires = {
-      { "hrsh7th/cmp-nvim-lsp", after = "nvim-cmp" },
-      { "hrsh7th/cmp-path", after = "nvim-cmp" },
-      { "hrsh7th/cmp-buffer", after = "nvim-cmp" },
-      { "hrsh7th/cmp-cmdline", after = "nvim-cmp" },
-      { "hrsh7th/cmp-vsnip", after = "nvim-cmp" },
-      { "hrsh7th/vim-vsnip", after = "nvim-cmp" },
-    }
-  }
+  use "hrsh7th/nvim-cmp"
+  use "hrsh7th/cmp-nvim-lsp"
+  use "hrsh7th/cmp-path"
+  use "hrsh7th/cmp-buffer"
+  use "hrsh7th/cmp-cmdline"
+  use "hrsh7th/cmp-vsnip"
+  use "hrsh7th/vim-vsnip"
 
   -- rust
   use "simrat39/rust-tools.nvim"
@@ -80,8 +74,14 @@ return packer.startup(function(use)
   use {
     "renerocksai/telekasten.nvim",
     requires = {{"nvim-telescope/telescope.nvim"}},
-    config = require('config.telekasten').config()
   }
+
+--  use { 
+--    'dracula/vim',
+--    config = function()
+--      vim.cmd([[colorscheme dracula]])
+--    end
+--  }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

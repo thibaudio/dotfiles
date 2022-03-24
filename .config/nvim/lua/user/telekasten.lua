@@ -1,7 +1,3 @@
-local M = {}
-
-function M.config()
-
 local home = vim.fn.expand("~/Nextcloud/org")
 local templates = home .. '/' .. 'templates'
 require("telekasten").setup({
@@ -18,7 +14,3 @@ require("telekasten").setup({
   template_new_daily = templates .. '/' .. 'daily.md',
   template_new_weekly = templates .. '/' .. 'weekly.md',
 })
-
-end
-
-return M
