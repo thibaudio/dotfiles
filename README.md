@@ -5,5 +5,9 @@
 - tmux
 - neovim
 - rg
-- fzf
-- https://github.com/NTBBloodbath/doom-nvim
+
+## Install tmux plugin manager
+```
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+```
+
