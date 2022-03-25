@@ -76,12 +76,15 @@ return packer.startup(function(use)
     requires = {{"nvim-telescope/telescope.nvim"}},
   }
 
---  use { 
---    'dracula/vim',
---    config = function()
---      vim.cmd([[colorscheme dracula]])
---    end
---  }
+  -- Which key
+  use "folke/which-key.nvim"
+
+  use { 
+    'dracula/vim',
+    config = function()
+      vim.cmd([[colorscheme dracula]])
+    end
+  }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
