@@ -195,6 +195,7 @@ local mappings = {
   f = {
     name = "+ Files",
     f = { "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>", "Find files"},
+    b = { "<cmd>Telescope file_browser path=%:p:h<cr>", "Browser"},
     p = { "<cmd>lua require('telescope.builtin').git_files(require('telescope.themes').get_dropdown{previewer = false})<cr>", "Find files in project"},
     s = { "<cmd>Telescope live_grep theme=ivy find_command=rg<cr>", "Find Text" },
 		c = { "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false, search_dirs={'~/.config/nvim'}})<cr>", "Find config file"},
