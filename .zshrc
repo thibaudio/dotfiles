@@ -71,12 +71,14 @@ export WORKON_HOME=~/.pyenv/versions
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/opt/sqlite/bin:$PATH"
 
-# DOOM
-export PATH=~/.emacs.d/bin:$PATH
-
 # pyenv - keep it at the end!
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+
+# use fd instead of find
+export FZF_DEFAULT_COMMAND="fd . $HOME"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="fd -t d . $HOME"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

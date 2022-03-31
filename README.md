@@ -5,6 +5,8 @@
 - tmux
 - neovim
 - rg
+- fzf
+- fd
 
 ## Install tmux plugin manager
 ```
