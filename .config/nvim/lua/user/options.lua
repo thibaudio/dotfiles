@@ -12,11 +12,15 @@ local options = {
   undofile = true,                         -- enable persistent undofile
   shiftwidth = 2,                          -- the number of spaces inserted for each indentation
   tabstop = 2,                             -- insert 2 spaces for a tab
+	softtabstop = 2,
   number = true,                           -- set numbered lines
   relativenumber = true,                   -- set relative numbered lines
   numberwidth = 4,                         -- set number column width to 2 {default 4}
   signcolumn = "yes",                      -- always show the sign column, otherwise it would shift the text each time
   termguicolors = true,                    -- set term gui colors (most terminals support this)
+	expandtab = true,
+	wrap = false,
+	updatetime = 50,
 }
 
 vim.opt.shortmess:append "c"

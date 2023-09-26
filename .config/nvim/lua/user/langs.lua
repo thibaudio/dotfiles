@@ -5,7 +5,6 @@ local servers = {
 	lua = {'lua_ls', ''},
 	gdscript = {'', ''},
 	godot_resource = {'', ''},
-	help = {'', ''},
 	vim = {'', ''},
 	bash = {'', 'bash'},
 }
@@ -16,11 +15,11 @@ local dap_servers = {}
 
 for k,v in pairs(servers) do
   ts_servers[#ts_servers+1]=k
-	if v[0] ~= '' then
-		lsp_servers[#lsp_servers+1] = v[0]
-	end
 	if v[1] ~= '' then
-		dap_servers[#dap_servers+1] = v[1]
+		lsp_servers[#lsp_servers+1] = v[1]
+	end
+	if v[2] ~= '' then
+		dap_servers[#dap_servers+1] = v[2]
 	end
 end
 
@@ -30,20 +29,34 @@ lsp.on_attach(function(client, bufnr)
   lsp.default_keymaps({buffer = bufnr})
 end)
 
-require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
-
 lsp.ensure_installed(lsp_servers)
 
 lsp.setup()
+
+require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
+
+-- Copilot
+require('copilot').setup({
+  suggestion = {enabled = false},
+  panel = {enabled = false},
+})
 
 -- Enable tab completion
 local cmp = require('cmp')
 local cmp_action = require('lsp-zero').cmp_action()
 
 cmp.setup({
+  source = {
+    {name = 'copilot'},
+    {name = 'nvim_lsp'},
+  },
   mapping = {
     ['<Tab>'] = cmp_action.luasnip_supertab(),
     ['<S-Tab>'] = cmp_action.luasnip_shift_supertab(),
+    ['<CR>'] = cmp.mapping.confirm({
+      behavior = cmp.ConfirmBehavior.Replace,
+      select = false,
+    })
   }
 })
 
@@ -71,7 +84,10 @@ end
 require('nvim-treesitter.configs').setup {
   ensure_installed = ts_servers,
 
-  highlight = { enable = true },
+  highlight = { 
+    enable = true,
+    additional_vim_regex_highlighting = false, 
+  },
+  auto_install = true,
 }
-
 
