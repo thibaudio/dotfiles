@@ -1,5 +1,5 @@
 #!/usr/bin/env zsh
-
+#
 if [[ $# -eq 2 ]]; then
     selected=$1
     script=$2
@@ -17,7 +17,7 @@ selected_name=$(basename "$selected" | tr . _)
 tmux_running=$(pgrep tmux)
 
 if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
-    tmux new-session -s $selected_name -c $selected
+    tmux new-session -s $selected_name -c $selected $script
     exit 0
 fi
 
