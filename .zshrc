@@ -19,6 +19,7 @@ source <(kubectl completion zsh)
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
 bindkey -s ^f "tmux-sessionizer\n"
+bindkey -s ^n "tmux-sessionizer ~/Nextcloud/org\n"
 
 # Python Dev
 export WORKON_HOME=~/.pyenv/versions
