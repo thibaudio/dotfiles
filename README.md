@@ -9,3 +9,6 @@
 - [fzf](https://github.com/junegunn/fzf)
 - [fd](https://github.com/sharkdp/fd)
 - [starship](https://starship.rs/)
+
+## Fonts
+https://github.com/romkatv/powerlevel10k#fonts
