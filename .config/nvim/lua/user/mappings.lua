@@ -41,6 +41,7 @@ keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 
 -- tmux-sessionizer
 keymap("n", "<C-f>", ":!tmux neww tmux-sessionizer<CR>", opts)
+keymap("n", "<C-n>", ":!tmux neww tmux-sessionizer ~/Nextcloud/org<CR>", opts)
 
 -- Disable arrow keys --
 keymap("n", "<Up>", "<Nop>", opts)
