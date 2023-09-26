@@ -36,19 +36,12 @@ lsp.setup()
 
 require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
 
--- Copilot
-require('copilot').setup({
-  suggestion = {enabled = false},
-  panel = {enabled = false},
-})
-
 -- Enable tab completion
 local cmp = require('cmp')
 local cmp_action = require('lsp-zero').cmp_action()
 
 cmp.setup({
   source = {
-    {name = 'copilot'},
     {name = 'nvim_lsp'},
   },
   mapping = {
