@@ -12,9 +12,6 @@ export GIT_EDITOR=nvim
 #alias vim="CC=/usr/local/bin/gcc-11 nvim"
 #alias vi="CC=/usr/local/bin/gcc-11 nvim"
 
-# kubectl completion
-source <(kubectl completion zsh)
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 gch() {
  git checkout "$(git branch --all | fzf| tr -d '[:space:]')"
@@ -28,6 +25,7 @@ bindkey -s ^n "tmux-sessionizer ~/Nextcloud/org\n"
 export WORKON_HOME=~/.pyenv/versions
 
 export PATH="/usr/local/sbin:$PATH"
+export PATH="${HOME}/.local/bin:$PATH"
 
 # pyenv - keep it at the end!
 eval "$(pyenv init -)"
