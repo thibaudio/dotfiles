@@ -36,4 +36,7 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd -t d . $HOME"
 
 export PYENV_VIRTUALENV_DISABLE_PROMPT=0
+
+export PATH="${HOME}/bin:$PATH"
+
 eval "$(starship init zsh)"
