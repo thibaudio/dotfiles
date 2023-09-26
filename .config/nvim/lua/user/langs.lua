@@ -35,6 +35,18 @@ require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
 lsp.ensure_installed(lsp_servers)
 
 lsp.setup()
+
+-- Enable tab completion
+local cmp = require('cmp')
+local cmp_action = require('lsp-zero').cmp_action()
+
+cmp.setup({
+  mapping = {
+    ['<Tab>'] = cmp_action.luasnip_supertab(),
+    ['<S-Tab>'] = cmp_action.luasnip_shift_supertab(),
+  }
+})
+
 -- DAP
 require("mason-nvim-dap").setup({
 	ensure_installed = dap_servers,

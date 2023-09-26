@@ -16,7 +16,10 @@ export GIT_EDITOR=nvim
 source <(kubectl completion zsh)
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+gch() {
+ git checkout "$(git branch --all | fzf| tr -d '[:space:]')"
+}
+
 
 bindkey -s ^f "tmux-sessionizer\n"
 bindkey -s ^n "tmux-sessionizer ~/Nextcloud/org\n"
