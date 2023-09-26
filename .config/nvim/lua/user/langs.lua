@@ -1,38 +1,61 @@
 local servers = {
-  rust = 'rust_analyzer',
-	terraform = 'terraformls',
-	python = 'jedi_language_server',
-	lua = 'lua_ls',
-	gdscript = '',
-	help = '',
-	vim = '',
+  rust = {'rust_analyzer', 'codelldb'},
+	terraform = {'terraformls', ''},
+	python = {'jedi_language_server', 'python'},
+	lua = {'lua_ls', ''},
+	gdscript = {'', ''},
+	godot_resource = {'', ''},
+	help = {'', ''},
+	vim = {'', ''},
+	bash = {'', 'bash'},
 }
 
 local ts_servers = {}
 local lsp_servers = {}
+local dap_servers = {}
 
 for k,v in pairs(servers) do
   ts_servers[#ts_servers+1]=k
-	if v ~= '' then
-		lsp_servers[#lsp_servers+1] = v
+	if v[0] ~= '' then
+		lsp_servers[#lsp_servers+1] = v[0]
+	end
+	if v[1] ~= '' then
+		dap_servers[#dap_servers+1] = v[1]
 	end
 end
 
-vim.opt.signcolumn = 'yes'
+local lsp = require('lsp-zero').preset({})
 
-local lsp = require('lsp-zero').preset({
-  name = 'minimal',
-  set_lsp_keymaps = true,
-  manage_nvim_cmp = true,
-  suggest_lsp_servers = false,
-})
+lsp.on_attach(function(client, bufnr)
+  lsp.default_keymaps({buffer = bufnr})
+end)
+
+require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
 
 lsp.ensure_installed(lsp_servers)
 
-lsp.nvim_workspace()
-
 lsp.setup()
+-- DAP
+require("mason-nvim-dap").setup({
+	ensure_installed = dap_servers,
+	automatic_setup = true,
+})
+require 'mason-nvim-dap'.setup_handlers {}
 
+local dap, dapui = require "dap", require "dapui"
+dapui.setup {} -- use default
+dap.listeners.after.event_initialized["dapui_config"] = function()
+	dapui.open()
+end
+dap.listeners.before.event_terminated["dapui_config"] = function()
+	dapui.close()
+end
+dap.listeners.before.event_exited["dapui_config"] = function()
+	dapui.close()
+end
+
+
+-- treesitter
 require('nvim-treesitter.configs').setup {
   ensure_installed = ts_servers,
 
