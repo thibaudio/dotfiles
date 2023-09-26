@@ -13,4 +13,5 @@ require("telekasten").setup({
   template_new_note = templates .. '/' .. 'note.md',
   template_new_daily = templates .. '/' .. 'daily.md',
   template_new_weekly = templates .. '/' .. 'weekly.md',
+  image_subdir = "img",
 })

@@ -181,6 +181,7 @@ local mappings = {
 		t = { "<cmd> Telekasten show_tags<cr>", "Tags" },
 		b = { "<cmd> Telekasten show_backlinks<cr>", "Backlinks" },
 		r = { "<cmd> Telekasten find_friends<cr>", "Find related notes" },
+		p = { "<cmd> Telekasten paste_img_and_link<cr>", "Paste image" },
 	},
 	b = {
 		name = "+ Buffers",
