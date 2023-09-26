@@ -63,7 +63,7 @@ cmp.setup({
 -- DAP
 require("mason-nvim-dap").setup({
 	ensure_installed = dap_servers,
-	automatic_setup = true,
+  handlers = {},
 })
 
 local dap, dapui = require "dap", require "dapui"
