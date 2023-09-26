@@ -1,7 +1,7 @@
 require "user.options"
 require "user.plugins"
 require "user.telekasten"
-require "user.cmp"
+require "user.langs"
 require "user.mappings"
 require "user.whichkey"
 require "user.telescope"

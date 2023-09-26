@@ -44,8 +44,20 @@ return packer.startup(function(use)
   use "wbthomason/packer.nvim" -- Have packer manage itself
 
   -- LSP
-  use "neovim/nvim-lspconfig" -- enable LSP
+  use { -- LSP Configuration & Plugins
+    'neovim/nvim-lspconfig',
+    requires = {
+      -- Automatically install LSPs to stdpath for neovim
+      'williamboman/mason.nvim',
+      'williamboman/mason-lspconfig.nvim',
 
+      -- Useful status updates for LSP
+      'j-hui/fidget.nvim',
+
+      -- Additional lua configuration, makes nvim stuff amazing
+      'folke/neodev.nvim',
+    },
+  }
    -- Telescope
    use {
      'nvim-telescope/telescope.nvim',
@@ -61,17 +73,15 @@ return packer.startup(function(use)
    }
 	use 'nvim-treesitter/nvim-treesitter-context'
 
-  -- cmp
-  use "hrsh7th/nvim-cmp"
-  use "hrsh7th/cmp-nvim-lsp"
-  use "hrsh7th/cmp-path"
-  use "hrsh7th/cmp-buffer"
-  use "hrsh7th/cmp-cmdline"
-  use "hrsh7th/cmp-vsnip"
-  use "hrsh7th/vim-vsnip"
-
-  -- rust
-  use "simrat39/rust-tools.nvim"
+  use { -- Autocompletion
+    'hrsh7th/nvim-cmp',
+    requires = { 
+      'hrsh7th/cmp-nvim-lsp',
+      'L3MON4D3/LuaSnip',
+      'saadparwaiz1/cmp_luasnip',
+      'hrsh7th/cmp-buffer'
+    },
+  }
 
   -- telekasten
   use {
@@ -82,12 +92,15 @@ return packer.startup(function(use)
   -- Which key
   use "folke/which-key.nvim"
 
+	-- Theme
   use { 
     'dracula/vim',
     config = function()
       vim.cmd([[colorscheme dracula]])
     end
   }
+
+  use 'nvim-lualine/lualine.nvim'
 
 	-- Comments
 	use("JoosepAlviste/nvim-ts-context-commentstring")
