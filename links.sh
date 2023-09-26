@@ -10,7 +10,6 @@ function link() {
 	done
 }
 
-link .tmux.conf "${HOME}"
 link .zshrc "${HOME}"
 link .alias "${HOME}"
 link ".config/*" "${HOME}/.config"
