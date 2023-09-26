@@ -7,6 +7,7 @@ local servers = {
 	godot_resource = {'', ''},
 	vim = {'', ''},
 	bash = {'', 'bash'},
+  markdown = {'marksman', ''}
 }
 
 local ts_servers = {}

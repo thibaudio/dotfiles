@@ -174,6 +174,9 @@ local mappings = {
 		i = { "<cmd> Telekasten insert_link<cr>", "Insert link" },
 		l = { "<cmd> Telekasten follow_link<cr>", "Follow link" },
 		s = { "<cmd> Telekasten search_notes<cr>", "Search" },
+		S = {
+			"<cmd>lua require('telescope.builtin').live_grep{find_command=rg, search_dirs={'~/Nextcloud/4-Archives/org_archive'}}<cr>",
+			"Search archives" },
 		d = { "<cmd> Telekasten find_daily_notes<cr>", "Find dailies" },
 		t = { "<cmd> Telekasten show_tags<cr>", "Tags" },
 		b = { "<cmd> Telekasten show_backlinks<cr>", "Backlinks" },
