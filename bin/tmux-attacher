@@ -1,0 +1,14 @@
+#!/usr/bin/env zsh
+
+if [[ $TMUX ]]; then
+  exit 0
+fi
+
+tmux_running=$(pgrep tmux)
+
+if [[ -z $tmux_running ]]; then
+  tmux-sessionizer
+else
+  tmux attach
+fi
+
