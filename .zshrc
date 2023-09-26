@@ -4,9 +4,6 @@ compinit
 [ -f ~/.specific ] && source ~/.specific
 source ~/.alias
 
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
-
 export GIT_EDITOR=nvim
 #alias nvim="CC=/usr/local/bin/gcc-11 nvim"
 #alias vim="CC=/usr/local/bin/gcc-11 nvim"
@@ -31,16 +28,10 @@ export WORKON_HOME=~/.pyenv/versions
 export PATH="/usr/local/sbin:$PATH"
 export PATH="${HOME}/.local/bin:$PATH"
 
-# pyenv - keep it at the end!
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-
 # use fd instead of find
 export FZF_DEFAULT_COMMAND="fd . $HOME"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd -t d . $HOME"
-
-export PYENV_VIRTUALENV_DISABLE_PROMPT=0
 
 export PATH="${HOME}/bin:$PATH"
 
