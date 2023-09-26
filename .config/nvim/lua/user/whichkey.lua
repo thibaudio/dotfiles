@@ -193,7 +193,7 @@ local mappings = {
 
   f = {
     name = "+ Files",
-    f = { "<cmd>lua require('telescope.builtin').find_files{ hidden=true, cwd = vim.fn.systemlist('git rev-parse --show-toplevel')[1] }<cr>", "Find files"},
+    f = { "<cmd>lua require('telescope.builtin').find_files{ hidden=true}<cr>", "Find files"},
     b = { "<cmd>Telescope file_browser path=%:p:h<cr>", "Browser"},
     p = { "<cmd>Telescope git_files<cr>", "Find files in project"},
     s = { "<cmd>lua require('telescope.builtin').live_grep{find_command=rg, cwd = vim.fn.systemlist('git rev-parse --show-toplevel')[1] }<cr>", "Search files" },
