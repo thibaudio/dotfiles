@@ -65,7 +65,6 @@ require("mason-nvim-dap").setup({
 	ensure_installed = dap_servers,
 	automatic_setup = true,
 })
-require 'mason-nvim-dap'.setup_handlers {}
 
 local dap, dapui = require "dap", require "dapui"
 dapui.setup {} -- use default
