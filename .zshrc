@@ -16,7 +16,6 @@ gch() {
 
 
 bindkey -s ^f "tmux-sessionizer\n"
-bindkey -s ^n "tmux-sessionizer ~/Nextcloud/org\n"
 
 if [[ -z "$TMUX" ]]; then
     bindkey -s ^a "tmux-attacher\n"
