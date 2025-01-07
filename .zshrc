@@ -35,4 +35,19 @@ export FZF_ALT_C_COMMAND="fd -t d . $HOME"
 
 export PATH="${HOME}/bin:$PATH"
 
+
+unameOut="$(uname -s)"
+case "${unameOut}" in
+    Linux*)
+      eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+      ;;
+    Darwin*)    ;;
+    CYGWIN*)    ;;
+    MINGW*)     ;;
+    MSYS_NT*)   ;;
+    *)          echo "Unknown Platform: ${unameOut}"
+esac
+
+
+
 eval "$(starship init zsh)"

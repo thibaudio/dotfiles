@@ -1,6 +1,7 @@
 # dotfiles
 
 ## Require
+- [homebrew](https://brew.sh/)
 - zsh
 - [tmux](https://github.com/tmux/tmux)
 - [tmux-plugins](https://github.com/tmux-plugins/tpm)
