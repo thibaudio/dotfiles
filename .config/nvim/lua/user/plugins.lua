@@ -51,39 +51,18 @@ return packer.startup(function(use)
 
 	use { "nvim-telescope/telescope-file-browser.nvim" }
 
-	-- telekasten
-	use {
-		"renerocksai/telekasten.nvim",
-		requires = { { "nvim-telescope/telescope.nvim" } },
-	}
+  --- LSP
+  use {
+      "mason-org/mason.nvim",
+      "mason-org/mason-lspconfig.nvim",
+      "neovim/nvim-lspconfig",
+  }
 
-	-- LSP
-	use {
-		'VonHeikemen/lsp-zero.nvim',
-		branch = 'v2.x',
-		requires = {
-			-- LSP Support
-			{ 'neovim/nvim-lspconfig' },           -- Required
-			{ 'williamboman/mason.nvim' },         -- Optional
-			{ 'williamboman/mason-lspconfig.nvim' }, -- Optional
-
-
-			-- Autocompletion
-			{ 'hrsh7th/nvim-cmp' },       -- Required
-			{ 'hrsh7th/cmp-nvim-lsp' },   -- Required
-			{ 'hrsh7th/cmp-nvim-lua' },   -- Optional
-
-			-- Snippets
-			{ 'L3MON4D3/LuaSnip' },           -- Required
-			{ 'rafamadriz/friendly-snippets' }, -- Optional
-		}
-	}
-
-	-- DAP
-	use { "mfussenegger/nvim-dap" }
-	use { "jay-babu/mason-nvim-dap.nvim" }
-	use { "nvim-telescope/telescope-dap.nvim" }
-	use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"} }
+  --- DAP
+  use {
+      "mfussenegger/nvim-dap",
+      "nvim-telescope/telescope-dap.nvim",
+  }
 
 	-- Treesitter
 	use {
