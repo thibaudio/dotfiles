@@ -63,6 +63,7 @@ return packer.startup(function(use)
       "mfussenegger/nvim-dap",
       "nvim-telescope/telescope-dap.nvim",
   }
+  use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"} }
 
 	-- Treesitter
 	use {
