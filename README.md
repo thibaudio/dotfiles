@@ -1,5 +1,8 @@
 # dotfiles
 
+## Windows
+powershell.exe -ExecutionPolicy Unrestricted -File .\install.ps1
+
 ## Require
 - [homebrew](https://brew.sh/)
 - zsh
