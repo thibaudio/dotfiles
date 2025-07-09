@@ -9,3 +9,4 @@ winget install sharkdp.fd
 
 # Link nvim config
 Start-Process powershell.exe -Verb runAs -ArgumentList "New-Item -Path $env:LOCALAPPDATA\nvim -ItemType SymbolicLink -Value $PSScriptRoot\.config\nvim -Force"
+Start-Process powershell.exe -Verb runAs -ArgumentList "New-Item -Path '$env:LOCALAPPDATA\nvim' -ItemType SymbolicLink -Value '$PSScriptRoot\.config\nvim' -Force"
