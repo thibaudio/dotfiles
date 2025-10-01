@@ -14,7 +14,8 @@ gch() {
  git checkout "$(git branch --all | fzf| tr -d '[:space:]')"
 }
 
-
+bindkey -v
+bindkey '^R' history-incremental-search-backward
 bindkey -s ^f "tmux-sessionizer\n"
 
 if [[ -z "$TMUX" ]]; then
@@ -47,3 +48,11 @@ esac
 
 
 eval "$(starship init zsh)"
+
+# pnpm
+export PNPM_HOME="/home/thibaud/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
