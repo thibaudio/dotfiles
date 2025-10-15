@@ -4,5 +4,5 @@ unstow:
   stow --verbose --target=$HOME --delete */
 
 install:
-  sudo pacman -S zsh tmux neovim ripgrep fzf fd starship
+  sudo pacman -S zsh tmux neovim ripgrep fzf fd starship lazygit
   git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm

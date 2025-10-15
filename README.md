@@ -14,6 +14,7 @@
 - [fzf](https://github.com/junegunn/fzf)
 - [fd](https://github.com/sharkdp/fd)
 - [starship](https://starship.rs/)
+- [lazygit](https://github.com/jesseduffield/lazygit)
 
 ## Usage
 ```sh
