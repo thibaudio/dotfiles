@@ -5,14 +5,8 @@ compinit
 source ~/.alias
 
 export GIT_EDITOR=nvim
-#alias nvim="CC=/usr/local/bin/gcc-11 nvim"
-#alias vim="CC=/usr/local/bin/gcc-11 nvim"
-#alias vi="CC=/usr/local/bin/gcc-11 nvim"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-gch() {
- git checkout "$(git branch --all | fzf| tr -d '[:space:]')"
-}
 
 bindkey -v
 bindkey '^R' history-incremental-search-backward
@@ -22,10 +16,6 @@ if [[ -z "$TMUX" ]]; then
     bindkey -s ^a "tmux-attacher\n"
 fi
 
-# Python Dev
-export WORKON_HOME=~/.pyenv/versions
-
-export PATH="/usr/local/sbin:$PATH"
 export PATH="${HOME}/.local/bin:$PATH"
 
 # use fd instead of find
@@ -45,10 +35,6 @@ case "${unameOut}" in
     *)          echo "Unknown Platform: ${unameOut}"
 esac
 
-
-
-eval "$(starship init zsh)"
-
 # pnpm
 export PNPM_HOME="/home/thibaud/.local/share/pnpm"
 case ":$PATH:" in
@@ -56,3 +42,5 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+eval "$(starship init zsh)"
