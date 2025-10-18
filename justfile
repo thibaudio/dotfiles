@@ -11,7 +11,7 @@ unstow:
   stow --verbose --target=$HOME --delete */
 
 install-hyprland:
-  sudo pacman -S --needed --noconfirm hyprland hyprlock hypridle swaync
+  sudo pacman -S --needed --noconfirm hyprland hyprlock hypridle swaync waybar
 
 install-tools:
   sudo pacman -S --needed --noconfirm zsh tmux neovim ripgrep fzf fd starship lazygit
