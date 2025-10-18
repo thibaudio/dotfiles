@@ -23,18 +23,6 @@ export FZF_DEFAULT_COMMAND="fd . $HOME"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd -t d . $HOME"
 
-unameOut="$(uname -s)"
-case "${unameOut}" in
-    Linux*)
-      eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-      ;;
-    Darwin*)    ;;
-    CYGWIN*)    ;;
-    MINGW*)     ;;
-    MSYS_NT*)   ;;
-    *)          echo "Unknown Platform: ${unameOut}"
-esac
-
 # pnpm
 export PNPM_HOME="/home/thibaud/.local/share/pnpm"
 case ":$PATH:" in
