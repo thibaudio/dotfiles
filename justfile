@@ -2,6 +2,11 @@ set shell := ["bash", "-c"]
 
 stow:
   stow --verbose --target=$HOME --restow */
+
+force-stow:
+  stow --verbose --target=$HOME --adopt */
+  git reset --hard
+
 unstow:
   stow --verbose --target=$HOME --delete */
 
