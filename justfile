@@ -11,7 +11,8 @@ unstow:
   stow --verbose --target=$HOME --delete */
 
 install-hyprland:
-  sudo pacman -S --needed --noconfirm hyprland hyprlock hypridle swaync waybar kwallet kwallet-pam ksshaskpass blueman
+  sudo pacman -S --needed --noconfirm hyprland hyprlock hypridle swaync waybar kwallet kwallet-pam ksshaskpass blueman xdg-desktop-portal-hyprland hyprpolkitagent qt5-wayland qt6-wayland cliphist wl-clip-persist
+  systemctl --user enable --now hyprpolkitagent.service
 
 install-tools:
   sudo pacman -S --needed --noconfirm zsh tmux neovim ripgrep fzf fd starship lazygit
