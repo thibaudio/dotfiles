@@ -13,11 +13,11 @@ just unstow # unlink dotfiles
 
 ## Todo
 - [ ] Theme sddm / firefox / swaync
-- [ ] battery indicator wayland
+- [ ] battery indicator waybar
 - [ ] wlogout
-- [ ] Deezer: new workspace on screen 1
 - [ ] Fix wake up from sleep
 - [ ] alt-tab?
 - [ ] kwallet not unlocking -> gnome-keyring?
 - [ ] just recipe to enroll TPM + unlock luks with TPM
 - [ ] dynamic monitors setup?
+- [ ] fix links from flatpak
