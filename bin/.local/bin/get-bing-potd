@@ -1,0 +1,52 @@
+#!/usr/bin/python3
+
+import urllib.request
+import json
+import os
+import subprocess
+
+
+def set_wallpaper(image):
+    subprocess.run(["hyprctl", "hyprpaper", "reload ,", image], capture_output=True)
+
+
+if __name__ == "__main__":
+    DIR = f"{os.getenv('HOME')}/.config/wallpies"
+    try:
+        # SET EXISTING WALLPAPER
+        # if os.path.isdir(DIR):
+        #   files = os.listdir(DIR)
+        #   if len(files) > 0:
+        #     set_wallpaper(os.path.join(DIR,files[0]))
+
+        # GET NEW WALLPAPER IF NEEDED
+        with urllib.request.urlopen(
+            "https://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1"
+        ) as request:
+            data = json.loads(request.read().decode())
+
+            image = f"{DIR}/bing_{data['images'][0]['startdate']}.jpg"
+
+            if os.path.isfile(image):
+                exit(0)
+
+            os.makedirs(DIR, exist_ok=True)
+
+            urllib.request.urlretrieve(
+                f"https://www.bing.com{data['images'][0]['urlbase']}_UHD.jpg", image
+            )
+            set_wallpaper(image)
+            os.symlink(f"{image}", f"{DIR}/tmp")
+            os.rename(f"{DIR}/tmp", f"{DIR}/current.jpg")
+
+            # Cleanup
+            for file in os.listdir(DIR):
+                if file == "current.jpg" or f"{DIR}/{file}" == image:
+                    continue
+                os.remove(f"{DIR}/{file}")
+
+            exit(0)
+
+    except Exception as e:
+        print(f"no wallpies: {e}")
+        exit(1)
