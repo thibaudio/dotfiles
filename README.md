@@ -12,7 +12,6 @@ just unstow # unlink dotfiles
 ```
 
 ## Todo
-- [ ] Wallpaper
 - [ ] waybar: +Network
 - [ ] dynamic monitors setup?
 - [ ] battery indicator waybar
