@@ -12,12 +12,12 @@ just unstow # unlink dotfiles
 ```
 
 ## Todo
-- [ ] Theme sddm / firefox / swaync
-- [ ] battery indicator waybar
-- [ ] wlogout
-- [ ] Fix wake up from sleep
-- [ ] alt-tab?
-- [ ] kwallet not unlocking -> gnome-keyring?
-- [ ] just recipe to enroll TPM + unlock luks with TPM
+- [ ] Wallpaper
 - [ ] dynamic monitors setup?
-- [ ] fix links from flatpak
+- [ ] battery indicator waybar
+- [ ] swaync: theme
+- [ ] wlogout
+- [ ] sddm: theme
+- [ ] Fix wake up from sleep
+- [ ] just recipe to enroll TPM + unlock luks with TPM
+- [ ] kwallet not unlocking -> gnome-keyring?
