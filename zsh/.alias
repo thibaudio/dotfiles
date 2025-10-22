@@ -2,4 +2,3 @@ alias lg=lazygit
 alias vim=nvim
 alias vi=nvim
 alias ll='ls -la'
-alias tb='distrobox enter tb'

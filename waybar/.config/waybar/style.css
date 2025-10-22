@@ -41,11 +41,16 @@
 #clock,
 #battery,
 #pulseaudio,
+#network,
 #custom-lock,
 #custom-power {
   background-color: @surface0;
   padding: 0.5rem 1rem;
   margin: 5px 0;
+}
+
+#network {
+  color: @blue;
 }
 
 #clock {
@@ -55,13 +60,13 @@
 }
 
 #battery {
-  color: @green;
+  color: @blue;
   margin-right: 1rem;
   border-radius: 0rem 1rem 1rem 0rem;
 }
 
 #battery.charging {
-  color: @green;
+  color: @blue;
 }
 
 #battery.warning:not(.charging) {
@@ -73,7 +78,7 @@
 }
 
 #pulseaudio {
-  color: @maroon;
+  color: @blue;
   border-radius: 1rem 0px 0px 1rem;
   margin-left: 1rem;
 }
@@ -85,7 +90,7 @@
 
 #custom-lock {
     border-radius: 1rem 0px 0px 1rem;
-    color: @lavender;
+    color: @blue;
 }
 
 #custom-power {
