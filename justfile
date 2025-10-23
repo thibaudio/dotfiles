@@ -11,7 +11,6 @@ unstow:
 
 install-hyprland:
   sudo pacman -S --needed --noconfirm hyprland hyprlock hypridle hyprpaper swaync waybar kwallet kwallet-pam ksshaskpass blueman xdg-desktop-portal-hyprland xdg-desktop-portal-gtk hyprpolkitagent qt5-wayland qt6-wayland cliphist wl-clip-persist qt6ct kvantum ttf-jetbrains-mono-nerd qt6-svg qt6-declarative qt5-quickcontrols2 hyprshot wlogout
-  sudo paru -S --needed --noconfirm syncthingtray-qt6
   systemctl --user enable --now hyprpolkitagent.service
 
 install-tools:
