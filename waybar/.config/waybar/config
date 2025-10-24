@@ -5,7 +5,7 @@
     // Choose the order of the modules
     "modules-left": [""],
     "modules-center": ["clock"],
-    "modules-right": ["pulseaudio", "network", "battery", "tray", "custom/lock", "custom/power"],
+    "modules-right": ["pulseaudio", "network", "bluetooth", "battery", "tray", "custom/lock", "custom/power"],
     "tray": {
         "icon-size": 21,
         "spacing": 10
@@ -55,5 +55,15 @@
       "format-linked": "{ifname} (No IP)",
       "format-disconnected": "Disconnected ⚠",
       "format-alt": "{ifname}:{essid} {ipaddr}/{cidr}"
-    }
+    },
+
+    "bluetooth": {
+        "format-on": "󰂯",
+        "format-off": "󰂲",
+        "format-disabled": "", // an empty format will hide the module
+        "format-connected": "󰂱 {num_connections}",
+        "tooltip-format-connected": "{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "on-click": "bluetooth &"
+    },
 }

@@ -12,9 +12,7 @@ just unstow # unlink dotfiles
 ```
 
 ## Todo
-- [ ] waybar: +Network
+- [ ] Fix power / resume issues
 - [ ] swaync: theme
-- [ ] wlogout
-- [ ] Fix wake up from sleep
 - [ ] just recipe to enroll TPM + unlock luks with TPM
 - [ ] kwallet not unlocking -> gnome-keyring?
