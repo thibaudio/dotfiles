@@ -42,9 +42,10 @@
         "on-click": "hyprlock &",
         "format": "",
     },
+
     "custom/power": {
         "tooltip": false,
-        "on-click": "wlogout &",
+        "on-click": "~/.local/bin/power &",
         "format": "\u23fb"
     },
 
