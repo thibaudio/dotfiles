@@ -10,8 +10,7 @@ unstow:
   stow --verbose --target=$HOME --delete */
 
 install-hyprland:
-  sudo pacman -S --needed --noconfirm hyprland hyprlock hypridle hyprpaper swaync waybar kwallet kwallet-pam ksshaskpass xdg-desktop-portal-hyprland xdg-desktop-portal-gtk hyprpolkitagent qt5-wayland qt6-wayland cliphist wl-clip-persist qt6ct ttf-jetbrains-mono-nerd qt6-svg qt6-declarative qt5-quickcontrols2 hyprshot rofi bluez-utils bc
-
+  sudo pacman -S --needed --noconfirm hyprland hyprlock hypridle hyprpaper swaync waybar kwallet kwallet-pam ksshaskpass xdg-desktop-portal-hyprland xdg-desktop-portal-gtk hyprpolkitagent qt5-wayland qt6-wayland cliphist wl-clip-persist qt6ct ttf-jetbrains-mono-nerd qt6-svg qt6-declarative qt5-quickcontrols2 hyprshot rofi bluez-utils bc rofi-emoji wtype
   systemctl --user enable --now hyprpolkitagent.service
 
 install-tools:
