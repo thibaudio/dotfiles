@@ -13,5 +13,4 @@ just adopt <target> # adopt a new file
 ```
 
 ## Todo
-- clipboard issue
 - history
