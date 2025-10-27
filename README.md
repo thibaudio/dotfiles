@@ -11,6 +11,3 @@ just stow # link dotfiles
 just unstow # unlink dotfiles
 just adopt <target> # adopt a new file
 ```
-
-## Todo
-- history
