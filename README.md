@@ -9,10 +9,9 @@
 just install # install packages
 just stow # link dotfiles
 just unstow # unlink dotfiles
+just adopt <target> # adopt a new file
 ```
 
 ## Todo
-- [ ] Fix power / resume / lid
-- [ ] swaync: theme
-- [ ] just recipe to enroll TPM + unlock luks with TPM
-- [ ] kwallet not unlocking -> gnome-keyring?
+- clipboard issue
+- history
