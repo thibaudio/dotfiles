@@ -6,8 +6,17 @@
 
 ## Usage
 ```sh
-just install # install packages
+just install-dev # install cli packages
+just install-app # install linux apps
 just stow # link dotfiles
 just unstow # unlink dotfiles
 just adopt <target> # adopt a new file
 ```
+
+## Notes
+### Windows
+Windows support is limited to nvim config
+- Run `just install-dev`
+- Add 7zip to your PATH
+- Start nvim
+If mason failed to install tree-sitter-cli, start nvim from bash once.

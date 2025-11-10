@@ -32,4 +32,4 @@ _install-dev-linux:
   sudo pacman -S --needed --noconfirm zsh stow tmux neovim ripgrep fzf fd starship lazygit git-lfs
 
 _install-dev-windows:
-  winget install neovim ripgrep fzf fd lazygit
+  winget install neovim ripgrep fzf fd lazygit 7zip OpenJS.NodeJS
