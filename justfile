@@ -9,5 +9,8 @@ adopt WHAT:
 unstow:
   stow --verbose --target=$HOME --delete */
 
-install:
-  sudo pacman -S --needed --noconfirm zsh stow kitty tmux neovim ripgrep fzf fd starship lazygit ttf-jetbrains-mono-nerd ksshaskpass wl-clipboard git-lfs
+install-dev:
+  sudo pacman -S --needed --noconfirm zsh stow tmux neovim ripgrep fzf fd starship lazygit git-lfs
+
+install-app:
+  sudo pacman -S --needed --noconfirm kitty ttf-jetbrains-mono-nerd ksshaskpass wl-clipboard 
