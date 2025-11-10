@@ -16,11 +16,12 @@ just adopt <target>   # adopt a new file
 
 ## Notes
 ### Windows
-Windows support is limited to nvim config
-- Run `just install-dev`
-- Add 7zip to your PATH
-- Start nvim
-If mason failed to install tree-sitter-cli, start nvim from bash once.
+- Windows support is limited to nvim config
+- Install:
+  - Run `just install-dev`
+  - Add 7zip to your PATH
+  - Start nvim
+- If mason failed to install tree-sitter-cli, start nvim from bash once.
 
 ### WSL
 `just install-dev` only supports archlinux  

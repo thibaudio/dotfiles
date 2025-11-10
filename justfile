@@ -20,7 +20,7 @@ _unstow-linux:
   stow --verbose --target=$HOME --delete */
 
 _unstow-windows:
-  Start-Process powershell.exe -Verb runAs -ArgumentList "Remove-Item -Path $env:LOCALAPPDATA\nvim"
+  Start-Process powershell.exe -Verb runAs -ArgumentList "Remove-Item -Recurse -Force -Path $env:LOCALAPPDATA\nvim"
 
 install-app:
   sudo pacman -S --needed --noconfirm kitty ttf-jetbrains-mono-nerd ksshaskpass wl-clipboard 
